@@ -9,12 +9,11 @@ MonomeFunctions {
 			gridTemp, gridWidthTemp, gridHeightTemp);
 	}
 
-	init { arg selColTemp, arcNameTemp, paramsNameTemp,
+	init { arg selColTemp, arcNameTemp,
 		gridTemp, gridWidthTemp, gridHeightTemp;
 
 		selCol = selColTemp;
 		arcName = arcNameTemp;
-		paramsName = paramsNameTemp;
 
 		leftIndex = 0;
 		rightIndex = 1;
@@ -167,7 +166,8 @@ MonomeFunctions {
 		gridLeds[x + (y * gridWidth)] = ledLevel;
 	}
 
-	monomeStart {
+	monomeStart {arg paramsNameTemp;
+		paramsName = paramsNameTemp;
 		//initialize grid
 		gridLeds[arcStateLeds[0][0] + (arcStateLeds[0][1] * gridWidth)] = 15;
 		gridLeds[(arcStateLeds[0][0] + 1) + (arcStateLeds[0][1] * gridWidth)] = 15;
